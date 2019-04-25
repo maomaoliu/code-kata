@@ -1,7 +1,9 @@
 package com.thoughtworks;
 
+import java.math.BigInteger;
+
 public class Fibonacci {
-    public int of(int i) {
-        return i > 2 ? of(i - 1) + of(i - 2) : 1;
+    public BigInteger of(int i) {
+        return i > 2 ? of(i - 1).add(of(i - 2)) : new BigInteger("1");
     }
 }
