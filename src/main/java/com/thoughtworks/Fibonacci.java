@@ -4,6 +4,19 @@ import java.math.BigInteger;
 
 public class Fibonacci {
     public BigInteger of(int i) {
-        return i > 2 ? of(i - 1).add(of(i - 2)) : new BigInteger("1");
+        BigInteger resultOne = new BigInteger("1");
+        BigInteger resultTwo = new BigInteger("1");
+        if (i < 3) {
+            return resultTwo;
+        }
+        int currentParam = 3;
+        BigInteger result = null;
+        while (currentParam <= i) {
+            result = resultOne.add(resultTwo);
+            resultOne = resultTwo;
+            resultTwo = result;
+            currentParam++;
+        }
+        return result;
     }
 }
